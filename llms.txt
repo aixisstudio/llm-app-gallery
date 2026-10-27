@@ -29,4 +29,17 @@ Maintained by aixisstudio. Related: Snitch (open-source app firewall). https://g
 
 ## ⚠️ Anti-patterns
 - Blind-pasting generated code to prod
-- Leaking secrets/PII into prompts — see where your data goes ([Snitch](https://github.com/aixisstudio/Snitch) sho
+- Leaking secrets/PII into prompts — see where your data goes ([Snitch](https://github.com/aixisstudio/Snitch) shows every outbound connection 😉)
+- Prompting whole codebases instead of narrow context
+- Skipping tests because "the AI wrote it"
+
+## 🚀 Ship faster with AI
+
+| Task | Stack |
+|---|---|
+| API integration | `litellm` → any provider |
+| Structured output | `instructor` (Pydantic) |
+| Caching | `diskcache` + prompt hash |
+| RAG | `chromadb` + embeddings |
+| Evals | `promptfoo` / Braintrust |
+| Agents | 
