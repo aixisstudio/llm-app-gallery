@@ -37,6 +37,21 @@ _El contenido detallado (listas, enlaces, descripciones) está en inglés por ma
 - Prompting whole codebases instead of narrow context
 - Skipping tests because "the AI wrote it"
 
+## 🚀 Ship faster with AI
+
+| Task | Stack |
+|---|---|
+| API integration | `litellm` → any provider |
+| Structured output | `instructor` (Pydantic) |
+| Caching | `diskcache` + prompt hash |
+| RAG | `chromadb` + embeddings |
+| Evals | `promptfoo` / Braintrust |
+| Agents | `pydantic-ai` / LangGraph |
+
+## ⚡ The 80/20
+
+Most "AI apps" = streaming + structured output + a RAG index. Master those three before touching agents.
+
 ---
 ## Contribuir
 
