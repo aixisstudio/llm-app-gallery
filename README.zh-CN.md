@@ -1,60 +1,54 @@
-# Llm App Gallery
+# Ai For Developers
 
 [English](README.md) | [Français](README.fr.md) | [Español](README.es.md) | **中文** | [日本語](README.ja.md) | [Русский](README.ru.md)
 
-可克隆运行的 LLM 应用集
+开发者如何用 AI — 工作流、工具、集成模式
 
-_详细内容（列表、链接、描述）以英文维护 — 以下章节为你指引。_
-
-## 🖼️ What this is
-
-A gallery of **complete, runnable LLM applications** — not snippets, full repos with architecture you can study, clone and adapt. The fastest way to learn LLM engineering is reading real apps.
-
-## 💬 Chat & RAG apps
-
-| App | Stack | Teaches |
-|---|---|---|
-| Local ChatGPT clone | Next.js + OpenAI | Streaming UI, chat state |
-| Chat-with-PDF | LangChain + Chroma | Chunking, retrieval, citations |
-| Multi-doc RAG | LlamaIndex + Qdrant | Hybrid retrieval, reranking |
-| SQL chat | OpenAI + DuckDB | Text-to-SQL, schema grounding |
-| Support bot | FastAPI + Claude | Tool use, escalation flows |
-
-## 🤖 Agent apps
-
-| App | Stack | Teaches |
-|---|---|---|
-| Research agent | LangGraph + search | Plan-act-reflect loops |
-| Data analyst agent | OpenAI + pandas | Code interpreter patterns |
-| Browser agent | Playwright + vision | Computer-use, screenshots |
-| SWE agent | Claude + git tools | Issue → PR automation |
-| Email triage agent | MCP + rules | Inbox automation |
-
-## 🎨 Generative apps
-
-| App | Stack | Teaches |
-|---|---|---|
-| Image studio | Flux + ComfyUI API | Prompt pipelines |
-| Podcast gen | TTS + script LLM | Multi-model chaining |
-| Slide generator | PPTX + LLM | Structured generation |
-| Meme bot | Diffusion + captioning | Fun + engagement loops |
-
-## 🏗️ Architecture patterns worth stealing
-
-1. **Streaming SSE** — every modern chat UI does it the same way
-2. **Tool loop** — `while tool_calls: execute → append → recall` — the universal agent skeleton
-3. **Structured output** — JSON schema mode > prompt-parsing, always
-4. **Eval harness** — apps that ship have a `evals/` folder; copy that habit
-5. **Cost guardrails** — token budgeting middleware before any prod launch
-
-## 🧰 Starter kits
-
-| Kit | For |
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * ** ** * ** ** ** * * * * ** ** *** **** **********************
+任务 如何完成
 |---|---|
-| `vercel/ai-chatbot` | Production-grade chat scaffold |
-| `langchain templates` | 40+ RAG variants |
-| `openai-cookbook` | Official patterns |
-| `anthropic-cookbook` | Claude-specific patterns |
+创造、审查、承诺——最大日赢
+校对:Soup
+校对:Soup
+++ 调试 + 粘贴微量 + 代码, 获得假说排名 ++
+校对:Soup
+****************************************************************************************************************************************************************************************************************************************************************
+
+□□□□□□□ 工作流
+- 计划 - 代理 - 审查 - - 你写谱,代理写码,你读每行
+- ** Diff Review**——永远不要接受盲目;请模型解释自己的diff
+- ** 多种模式检查** -- -- 关于风险变化的第二次意见
+- ** 试验 -- -- 第一次促进** -- -- 在执行前要求试验
+
+□ □ □ 一体化模式
+QQ图案 使用QQ
+|---|---|
+聊天完成 QQA, 世代 QQ
+函数调用 QQ 让模型调用您的 API QQ
+* 答复来自 * * 文件/数据 * *
+|代理 |多步任务与工具 |
+Evals 快速/版本回归测试
+
+□□□□□□□□□□□□□□□
+- 盲涂生成的代码以复制
+- 泄露秘密/ PII 输入提示 - 查看您的数据去向( [Snitch] (https://github.com/aixisstudio/Snitch)) 显示每个出入口的连接 QQ)
+- 启动整个编码库而不是狭义上下文
+- 跳过测试 因为"人工智能写的"
+
+□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□
+
+任务 QQ 堆积 QQ
+|---|---|
+* * API 集成 * * `litellm` * 任何提供者 * *
+QQ 结构输出 `instructor`( Pydantic) QQ
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * ** * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
++ `chromadb` + 嵌入式 + QQ
+Evals `promptfoo` / 大脑信任 |
+`pydantic-ai` / LangGraph ===
+
+#################################################################################################################################
+
+大多数"AI apps"=流化+结构化输出+一个RAG指数. 在接触特工之前先把这三个人交给我
 
 ---
 ## 贡献
