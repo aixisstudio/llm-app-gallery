@@ -1,60 +1,54 @@
-# Llm App Gallery
+# Ai For Developers
 
 [English](README.md) | [Français](README.fr.md) | [Español](README.es.md) | [中文](README.zh-CN.md) | [日本語](README.ja.md) | **Русский**
 
-Реальные LLM-приложения для клонирования
+Как разработчики используют ИИ
 
-_Подробное содержимое (списки, ссылки, описания) ведётся на английском — разделы ниже помогут сориентироваться._
-
-## 🖼️ What this is
-
-A gallery of **complete, runnable LLM applications** — not snippets, full repos with architecture you can study, clone and adapt. The fastest way to learn LLM engineering is reading real apps.
-
-## 💬 Chat & RAG apps
-
-| App | Stack | Teaches |
-|---|---|---|
-| Local ChatGPT clone | Next.js + OpenAI | Streaming UI, chat state |
-| Chat-with-PDF | LangChain + Chroma | Chunking, retrieval, citations |
-| Multi-doc RAG | LlamaIndex + Qdrant | Hybrid retrieval, reranking |
-| SQL chat | OpenAI + DuckDB | Text-to-SQL, schema grounding |
-| Support bot | FastAPI + Claude | Tool use, escalation flows |
-
-## 🤖 Agent apps
-
-| App | Stack | Teaches |
-|---|---|---|
-| Research agent | LangGraph + search | Plan-act-reflect loops |
-| Data analyst agent | OpenAI + pandas | Code interpreter patterns |
-| Browser agent | Playwright + vision | Computer-use, screenshots |
-| SWE agent | Claude + git tools | Issue → PR automation |
-| Email triage agent | MCP + rules | Inbox automation |
-
-## 🎨 Generative apps
-
-| App | Stack | Teaches |
-|---|---|---|
-| Image studio | Flux + ComfyUI API | Prompt pipelines |
-| Podcast gen | TTS + script LLM | Multi-model chaining |
-| Slide generator | PPTX + LLM | Structured generation |
-| Meme bot | Diffusion + captioning | Fun + engagement loops |
-
-## 🏗️ Architecture patterns worth stealing
-
-1. **Streaming SSE** — every modern chat UI does it the same way
-2. **Tool loop** — `while tool_calls: execute → append → recall` — the universal agent skeleton
-3. **Structured output** — JSON schema mode > prompt-parsing, always
-4. **Eval harness** — apps that ship have a `evals/` folder; copy that habit
-5. **Cost guardrails** — token budgeting middleware before any prod launch
-
-## 🧰 Starter kits
-
-| Kit | For |
+##   Где ИИ помогает разработчикам
+Задание Как
 |---|---|
-| `vercel/ai-chatbot` | Production-grade chat scaffold |
-| `langchain templates` | 40+ RAG variants |
-| `openai-cookbook` | Official patterns |
-| `anthropic-cookbook` | Claude-specific patterns |
+Boilerplate & tests Generate, review, commit — самая большая ежедневная победа
+| Наследственное понимание кода | Вставить файл, попросить прохождение |
+| Рефакторинг | «Извлеките это, упростите это» — обзор дифф |
+| Отладка | Вставить след + код, получить гипотезы ранжированные |
+| Документы и комментарии | Первые черновики — полируйте себя |
+| Прототипы | Часы → минуты на коде выброса |
+
+##Рабочие процессы, которые работают
+**План → агент → обзор ** — вы пишете спецификацию, агент пишет код, вы читаете каждую строку
+**Diff review** — никогда не принимайте слепых; попросите модель объяснить свой собственный дифф
+**Многомодельная проверка** — второе мнение о рискованных изменениях
+**Тесты-первое подсказывание** - запросить тесты перед внедрением
+
+##  patterns Интеграция
+Паттерн | Использование
+|---|---|
+Завершение чата, Q&A, поколение
+| Функциональные вызовы | Пусть модель вызывает ваши API
+| RAG | Ответ от *your* docs/data |
+| Агенты | Многошаговые задания с инструментами |
+| Evals | Быстрое/версионное регрессионное тестирование |
+
+## -️ Антипаттерны
+- Созданный слепой пастой код для подталкивания
+Утечка секретов / PII в подсказки - посмотрите, куда идут ваши данные ([Snitch] (https://github.com/aixisstudio/Snitch) показывает каждое исходящее соединение 😉)
+Продвижение целых кодовых баз вместо узкого контекста
+Пропуск тестов, потому что «Ай написал это»
+
+###Корабль быстрее с ИИ
+
+| Задание | Стек
+|---|---|
+API интеграция `litellm` любой провайдер
+| Структурированный выход | `instructor` (Pydantic) |
+| Кэширование | `diskcache` + быстрый хеш
+| RAG | `chromadb` + встраивания |
+| Evals | `promptfoo` / Braintrust |
+Агенты, `pydantic-ai` / LangGraph
+
+### 80/20
+
+Большинство «приложений ИИ» = потоковая передача + структурированный вывод + индекс RAG. Овладейте этими тремя, прежде чем прикасаться к агентам.
 
 ---
 ## Участие
