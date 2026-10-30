@@ -1,54 +1,58 @@
-# Ai For Developers
+# Llm App Gallery
 
 [English](README.md) | **Français** | [Español](README.es.md) | [中文](README.zh-CN.md) | [日本語](README.ja.md) | [Русский](README.ru.md)
 
-Comment les devs utilisent l'IA — workflows, outils, patterns d'intégration
+De vraies applis LLM à cloner — RAG, agents, workflows, démos
 
-Où l'IA aide réellement les devs
-Tâche
+C'est quoi ?
+
+Une galerie d'applications LLM **complètes et exploitables** — pas d'extraits, des repos complets avec l'architecture que vous pouvez étudier, cloner et adapter. La meilleure façon d'apprendre l'ingénierie LLM est de lire de vraies applications.
+
+Clavardage et applications RAG
+
+Appl.
+|---|---|---|
+Local ChatGPT clone.Js + OpenAI.
+Clavardage, recherche, citations
+Recherche hybride, reclassification
+* Chat SQL * OpenAI + DuckDB * Text-to-SQL, mise à la terre du schéma *
+Support bot-up FastAPI + Claude
+
+Les applications Agent
+
+Appl.
+|---|---|---|
+L'agent de recherche LangGraph + recherche
+Agent d'analyse des données OpenAI + pandas
+L'agent du navigateur L'auteur de jeux + la vision L'utilisation de l'ordinateur, des captures d'écran
+Claude + git tools Numéro → Automation PR
+Agent de triage par e-mail
+
+Des applications originales
+
+Appl.
+|---|---|---|
+Studio d'images Flux + API ComfyUI
+TTS + script LLM
+Génération structurée
+Diffuseur + sous-titrage
+
+Les modèles d'architecture méritent d'être volés
+
+1. **Streaming SSE** — chaque chat moderne UI le fait de la même manière
+2. **Loop** — `while tool_calls: execute → append → recall` — le squelette universel de l'agent
+3. ** Sortie structurée** — mode schéma JSON > lecture rapide, toujours
+4. **Eval harnais** — applications qui expédient ont un dossier `evals/`; copiez cette habitude
+5. **Cost garde-corps** - jeton budgétisant intergiciel avant tout lancement prod
+
+Kits de démarrage
+
+Kit pour
 |---|---|
-Générer, examiner, s'engager — plus grande victoire quotidienne
-Compréhension du code legs
-Refactoring (en anglais seulement) "Extrait ceci, simplifie ça" — revisite le diff (en anglais seulement)
-Déboguage Collez la trace + code, obtenez des hypothèses classées
-Docs et commentaires: Premières ébauches — polissez-vous
-Prototypes Heures → minutes sur le code de lancement
-
-Flux de travail qui fonctionnent
-- **Plan → agent → avis** — vous écrivez la spécification, l'agent écrit le code, vous lisez chaque ligne
-- **Diff review** — jamais accepter aveugle; demander au modèle d'expliquer sa propre diff
-- **Vérification multimodèle** — deuxième avis sur les changements à risque
-- **Tests-premier appel** — demander des tests avant la mise en œuvre
-
-Modèles d'intégration
-Utilisation
-|---|---|
-Achèvement du clavardage
-Fonction appelant le modèle appelant votre API
-Réponse de *votre* docs/données
-Agents Tâches en plusieurs étapes avec des outils
-Essai de régression rapide/version
-
-Anti-patterns
-- Code généré par le collage aveugle à prod
-- Baisser les secrets/l'IPI dans les invites — voir où vos données vont ([Snitch](https://github.com/aixisstudio/Snitch) montre chaque connexion sortante
-- Proposer des bases de code complètes au lieu d'un contexte étroit
-- Sauter les tests parce que "l'IA l'a écrit"
-
-Navire plus vite avec l'IA
-
-Tâche
-|---|---|
-L'intégration de l'API
-Sortie structurée: `instructor` (Pydantique)
-Caching: `diskcache` + hash
-CdPH0X + emboîtements
-Evales `promptfoo` / Braintrust
-Agents `pydantic-ai` / LangGraph
-
-Les 80/20
-
-La plupart des applications AI = streaming + sortie structurée + indice RAG. Maître ces trois avant de toucher des agents.
+`vercel/ai-chatbot`=Échafaudage de chat de qualité de production
+40+ Variantes RAG
+Modèles officiels
+`anthropic-cookbook`
 
 ---
 ## Contribuer
