@@ -1,60 +1,54 @@
-# Llm App Gallery
+# Ai For Developers
 
 [English](README.md) | **Français** | [Español](README.es.md) | [中文](README.zh-CN.md) | [日本語](README.ja.md) | [Русский](README.ru.md)
 
-De vraies applis LLM à cloner — RAG, agents, workflows, démos
+Comment les devs utilisent l'IA — workflows, outils, patterns d'intégration
 
-_Le contenu détaillé (listes, liens, descriptions) est en anglais pour rester maintenable — les sections ci-dessous te guident._
-
-## 🖼️ What this is
-
-A gallery of **complete, runnable LLM applications** — not snippets, full repos with architecture you can study, clone and adapt. The fastest way to learn LLM engineering is reading real apps.
-
-## 💬 Chat & RAG apps
-
-| App | Stack | Teaches |
-|---|---|---|
-| Local ChatGPT clone | Next.js + OpenAI | Streaming UI, chat state |
-| Chat-with-PDF | LangChain + Chroma | Chunking, retrieval, citations |
-| Multi-doc RAG | LlamaIndex + Qdrant | Hybrid retrieval, reranking |
-| SQL chat | OpenAI + DuckDB | Text-to-SQL, schema grounding |
-| Support bot | FastAPI + Claude | Tool use, escalation flows |
-
-## 🤖 Agent apps
-
-| App | Stack | Teaches |
-|---|---|---|
-| Research agent | LangGraph + search | Plan-act-reflect loops |
-| Data analyst agent | OpenAI + pandas | Code interpreter patterns |
-| Browser agent | Playwright + vision | Computer-use, screenshots |
-| SWE agent | Claude + git tools | Issue → PR automation |
-| Email triage agent | MCP + rules | Inbox automation |
-
-## 🎨 Generative apps
-
-| App | Stack | Teaches |
-|---|---|---|
-| Image studio | Flux + ComfyUI API | Prompt pipelines |
-| Podcast gen | TTS + script LLM | Multi-model chaining |
-| Slide generator | PPTX + LLM | Structured generation |
-| Meme bot | Diffusion + captioning | Fun + engagement loops |
-
-## 🏗️ Architecture patterns worth stealing
-
-1. **Streaming SSE** — every modern chat UI does it the same way
-2. **Tool loop** — `while tool_calls: execute → append → recall` — the universal agent skeleton
-3. **Structured output** — JSON schema mode > prompt-parsing, always
-4. **Eval harness** — apps that ship have a `evals/` folder; copy that habit
-5. **Cost guardrails** — token budgeting middleware before any prod launch
-
-## 🧰 Starter kits
-
-| Kit | For |
+Où l'IA aide réellement les devs
+Tâche
 |---|---|
-| `vercel/ai-chatbot` | Production-grade chat scaffold |
-| `langchain templates` | 40+ RAG variants |
-| `openai-cookbook` | Official patterns |
-| `anthropic-cookbook` | Claude-specific patterns |
+Générer, examiner, s'engager — plus grande victoire quotidienne
+Compréhension du code legs
+Refactoring (en anglais seulement) "Extrait ceci, simplifie ça" — revisite le diff (en anglais seulement)
+Déboguage Collez la trace + code, obtenez des hypothèses classées
+Docs et commentaires: Premières ébauches — polissez-vous
+Prototypes Heures → minutes sur le code de lancement
+
+Flux de travail qui fonctionnent
+- **Plan → agent → avis** — vous écrivez la spécification, l'agent écrit le code, vous lisez chaque ligne
+- **Diff review** — jamais accepter aveugle; demander au modèle d'expliquer sa propre diff
+- **Vérification multimodèle** — deuxième avis sur les changements à risque
+- **Tests-premier appel** — demander des tests avant la mise en œuvre
+
+Modèles d'intégration
+Utilisation
+|---|---|
+Achèvement du clavardage
+Fonction appelant le modèle appelant votre API
+Réponse de *votre* docs/données
+Agents Tâches en plusieurs étapes avec des outils
+Essai de régression rapide/version
+
+Anti-patterns
+- Code généré par le collage aveugle à prod
+- Baisser les secrets/l'IPI dans les invites — voir où vos données vont ([Snitch](https://github.com/aixisstudio/Snitch) montre chaque connexion sortante
+- Proposer des bases de code complètes au lieu d'un contexte étroit
+- Sauter les tests parce que "l'IA l'a écrit"
+
+Navire plus vite avec l'IA
+
+Tâche
+|---|---|
+L'intégration de l'API
+Sortie structurée: `instructor` (Pydantique)
+Caching: `diskcache` + hash
+CdPH0X + emboîtements
+Evales `promptfoo` / Braintrust
+Agents `pydantic-ai` / LangGraph
+
+Les 80/20
+
+La plupart des applications AI = streaming + sortie structurée + indice RAG. Maître ces trois avant de toucher des agents.
 
 ---
 ## Contribuer
